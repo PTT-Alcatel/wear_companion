@@ -45,36 +45,41 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) => Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const PTTScreen(),
+            ),
+          ),
+          backgroundColor: Colors.purple,
+          child: const Icon(
+            Icons.navigate_next_rounded,
+            size: 60,
+            color: Colors.white,
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         body: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                QrImage(
-                  data: widget.randomCode,
-                  version: QrVersions.auto,
-                  size: 100.0,
-                ),
-                const SizedBox(height: 16.0),
-                ElevatedButton(
-                  onPressed: () => setState(() {
+                GestureDetector(
+                  onTap: () => setState(() {
                     final watchScreenState =
                         context.findAncestorStateOfType<_WatchScreenState>();
                     if (watchScreenState != null) {
                       watchScreenState._generateRandomCode();
                     }
                   }),
-                  child: const Text('Generate Code'),
-                ),
-                // make a button to go the next screen
-                ElevatedButton(
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const PTTScreen(),
-                    ),
+                  child: QrImage(
+                    foregroundColor: Colors.white,
+                    data: widget.randomCode,
+                    version: QrVersions.auto,
+                    size: 100,
                   ),
-                  child: const Text('Next Screen'),
                 ),
+                const SizedBox(height: 16.0),
               ],
             ),
           ),

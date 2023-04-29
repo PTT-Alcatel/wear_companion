@@ -6,7 +6,11 @@ class PttApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-        theme: ThemeData(useMaterial3: true, primaryColor: Colors.red),
+        theme: ThemeData(
+                useMaterial3: true,
+                colorScheme:
+                    ColorScheme.fromSwatch(primarySwatch: Colors.purple))
+            .copyWith(scaffoldBackgroundColor: Colors.black),
         home: const WatchScreen(),
         debugShowCheckedModeBanner: false,
       );

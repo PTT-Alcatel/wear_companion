@@ -1,4 +1,4 @@
-package com.example.wear_os_test
+package com.alcatel.ptt_companion
 
 import io.flutter.embedding.android.FlutterActivity
 

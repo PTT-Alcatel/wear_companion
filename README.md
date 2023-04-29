@@ -1,6 +1,6 @@
-# wear_os_test
+# Projet_PTT_Alcatel_wear
 
-A new Flutter project.
+WearOS Companion App for Alcatel PTT Project
 
 ## Getting Started
 

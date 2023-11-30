@@ -14,7 +14,6 @@ class _PTTScreenState extends State<PTTScreen> {
   Widget build(BuildContext context) => WatchShape(
       builder: (context, shape, child) => Scaffold(
               body: Center(
-                  // make a push to talk button
                   child: ButtonBar(
             alignment: MainAxisAlignment.center,
             children: [
